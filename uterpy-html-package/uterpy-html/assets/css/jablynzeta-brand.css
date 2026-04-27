@@ -1,0 +1,283 @@
+/* JablynZeta Professional Services — brand colors + logo
+   Primary: #4A5559 | Accent: #9BA9AF | Background: #ffffff */
+
+:root {
+  --jz-primary: #4a5559;
+  --jz-primary-rgb: 74, 85, 89;
+  --jz-accent: #9ba9af;
+  --jz-accent-rgb: 155, 169, 175;
+  --jz-primary-dark: #3a4245;
+
+  --uterpy-base: #4a5559;
+  --uterpy-base-rgb: 74, 85, 89;
+  --uterpy-black: #4a5559;
+  --uterpy-black-rgb: 74, 85, 89;
+  --uterpy-gray: #9ba9af;
+  --uterpy-gray-rgb: 155, 169, 175;
+  --uterpy-border: rgba(155, 169, 175, 0.35);
+
+  /* Legacy alias blocks used in parts of uterpy.css */
+  --woodza-base: #9ba9af;
+  --woodza-primary: #4a5559;
+  --woodza-text-dark: #4a5559;
+  --woodza-white: #ffffff;
+
+  --thm-font: 'Kumbh Sans', system-ui, sans-serif;
+}
+
+/* Headings: align with logo (strong sans) */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.sec-title__title,
+.page-header__inner h2 {
+  font-family: var(--uterpy-font) !important;
+  font-weight: 700;
+  color: #4a5559;
+}
+
+.sec-title__tagline h6 {
+  color: #9ba9af !important;
+}
+
+.footer-widget__title {
+  font-family: var(--uterpy-font) !important;
+  color: #9ba9af;
+}
+
+/* Header logo — horizontal mark (slightly larger for readability) */
+.logo-one a {
+  display: inline-flex;
+  align-items: center;
+}
+
+.logo-one img,
+.stricky-header .logo img {
+  max-height: 90px;
+  width: auto;
+  height: auto;
+  vertical-align: middle;
+  /* Sharper, higher-quality scaling on modern browsers */
+  image-rendering: auto;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* Footer: white backing so logo artwork (white field) reads on dark bar */
+.site-footer .footer-widget__logo a {
+  display: inline-block;
+  background: #ffffff;
+  padding: 10px 14px;
+  border-radius: 6px;
+  line-height: 0;
+}
+
+.site-footer .footer-widget__logo img {
+  max-height: 124px;
+  width: auto;
+  height: auto;
+  image-rendering: auto;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.mobile-nav__content .logo-box a {
+  display: inline-block;
+  background: #ffffff;
+  padding: 8px 10px;
+  border-radius: 4px;
+  line-height: 0;
+}
+
+.mobile-nav__content .logo-box img {
+  max-height: 112px;
+  width: auto;
+  image-rendering: auto;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* Prefer high-quality resampling (supersedes `auto` above where supported) */
+@supports (image-rendering: high-quality) {
+  .logo-one img,
+  .stricky-header .logo img,
+  .site-footer .footer-widget__logo img,
+  .mobile-nav__content .logo-box img {
+    image-rendering: high-quality;
+  }
+}
+
+/* Button hover ripple */
+.thm-btn:before {
+  background: #3a4245 !important;
+}
+
+/* Button hover: deepen primary */
+.thm-btn:hover {
+  color: #ffffff;
+}
+
+/* Slider secondary link */
+.main-slider-one__content .btn-two a {
+  color: #4a5559;
+}
+
+.main-slider-one__content .btn-two a:hover {
+  color: #3a4245;
+}
+
+/* Links: accent hover */
+a:hover {
+  color: #3a4245;
+}
+
+/* Page header bar — tint toward brand */
+.page-header__bg {
+  filter: grayscale(0.2) contrast(0.95);
+  opacity: 0.92;
+}
+
+/* “Why choose” image column — remove remaining template red (asset + CSS bars) */
+.why-choose-one__img .shape1 img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Template frame: large 670×630, small 400×385 — keep aspect + crisp cover fill */
+.why-choose-one__img1 {
+  aspect-ratio: 670 / 630;
+  max-width: 670px;
+  overflow: hidden;
+}
+
+.why-choose-one__img1 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.why-choose-one__img2 .inner {
+  aspect-ratio: 400 / 385;
+  max-width: 400px;
+  width: 100%;
+}
+
+.why-choose-one__img2 .inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.why-choose-one__img .shape2,
+.why-choose-one__img2 .experience-box::after {
+  background: var(--jz-primary) !important;
+}
+
+/* Service card CTA chevron was hard-coded coral in uterpy.css */
+.services-one__single-content .btn-box a .icon-box::after {
+  border-right-color: var(--jz-primary) !important;
+}
+
+/* Broader impact (therapy one): right column photo — 475×775 frame */
+.therapy-one__img1 img {
+  display: block;
+  width: 475px;
+  max-width: 100%;
+  aspect-ratio: 475 / 775;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Hide template hero column dividers (optional) */
+.main-slider-one .slider-one__border {
+  display: none !important;
+}
+
+/* Floating WhatsApp: delayed entrance + soft bob (sits above scroll-to-top) */
+.jz-whatsapp-fab-wrap {
+  position: fixed;
+  right: 40px;
+  bottom: calc(95px + env(safe-area-inset-bottom, 0px));
+  z-index: 100;
+  opacity: 0;
+  transform: translateY(22px) scale(0.92);
+  pointer-events: none;
+  animation: jz-wa-enter 0.75s cubic-bezier(0.34, 1.45, 0.64, 1) 2.4s forwards;
+}
+
+.jz-whatsapp-fab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #25d366;
+  color: #ffffff;
+  font-size: 30px;
+  line-height: 1;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+  animation: jz-wa-bob 2.85s ease-in-out 3.1s infinite;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.jz-whatsapp-fab:hover {
+  color: #ffffff;
+  transform: scale(1.06);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.22);
+}
+
+@keyframes jz-wa-enter {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+  }
+}
+
+@keyframes jz-wa-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .jz-whatsapp-fab-wrap {
+    animation: none;
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+  }
+
+  .jz-whatsapp-fab {
+    animation: none;
+  }
+
+  .jz-whatsapp-fab:hover {
+    transform: none;
+  }
+}
+
+@media (max-width: 575px) {
+  .jz-whatsapp-fab-wrap {
+    right: 20px;
+    bottom: calc(88px + env(safe-area-inset-bottom, 0px));
+  }
+}

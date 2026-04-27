@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 70" role="img" aria-label="JablynZeta Professional Services">
+  <title>JablynZeta Professional Services</title>
+  <!-- Icon left: interlocking circles — #9BA9AF + #4A5559 -->
+  <g transform="translate(36,35)" fill="none" stroke-linecap="round">
+    <circle cx="-9" cy="0" r="17" stroke="#9ba9af" stroke-width="6"/>
+    <circle cx="9" cy="0" r="17" stroke="#4a5559" stroke-width="6"/>
+  </g>
+  <g transform="translate(92,6)" font-family="system-ui, -apple-system, 'Segoe UI', 'Kumbh Sans', sans-serif" font-size="15" font-weight="700" fill="#4a5559" letter-spacing="0.11em">
+    <text x="0" y="18">JABLYN ZETA</text>
+    <text x="0" y="40">PROFESSIONAL</text>
+    <text x="0" y="62">SERVICES</text>
+  </g>
+</svg>

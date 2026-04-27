@@ -1,0 +1,19 @@
+{
+  "name": "uterpy-psychology-counseling",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "optimize:banners": "node tools/optimize-banners.mjs",
+    "optimize:services": "node tools/optimize-services.mjs",
+    "optimize:why-choose": "node tools/optimize-why-choose.mjs",
+    "optimize:therapy-broader": "node tools/optimize-therapy-broader.mjs",
+    "build:favicons": "node tools/build-favicons.mjs"
+  },
+  "devDependencies": {
+    "sharp": "^0.34.5",
+    "vite": "^6.3.5"
+  }
+}
