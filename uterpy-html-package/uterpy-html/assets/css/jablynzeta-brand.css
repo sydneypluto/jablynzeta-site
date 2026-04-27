@@ -1,6 +1,43 @@
 /* JablynZeta Professional Services — brand colors + logo
    Primary: #4A5559 | Accent: #9BA9AF | Background: #ffffff */
 
+/* Preloader: logo (replaces default loader.png + infinite flip) */
+.preloader__image {
+  background-image: none !important;
+  width: auto !important;
+  height: auto !important;
+  max-width: min(90vw, 320px) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  animation: jzPreloaderIn 0.5s ease-out 1 both !important;
+  animation-iteration-count: 1 !important;
+}
+
+.preloader__image img {
+  display: block;
+  width: min(100%, 220px);
+  height: auto;
+  object-fit: contain;
+}
+
+/* Hidden by vanilla JS; backup if class toggled from theme */
+.preloader--done {
+  display: none !important;
+  pointer-events: none;
+}
+
+@keyframes jzPreloaderIn {
+  from {
+    opacity: 0.6;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 :root {
   --jz-primary: #4a5559;
   --jz-primary-rgb: 74, 85, 89;

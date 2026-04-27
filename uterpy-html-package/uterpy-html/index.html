@@ -49,16 +49,59 @@
     <link rel="preload" as="image" href="assets/images/slider/home-banner-1.jpg" fetchpriority="high" />
 </head>
 
-<body class="custom-cursor">
+<body class="custom-cursor" id="top">
 
     <div class="custom-cursor__cursor"></div>
     <div class="custom-cursor__cursor-two"></div>
 
 
-    <div class="preloader">
-        <div class="preloader__image"></div>
+    <div class="preloader" id="preloader" role="status" aria-live="polite" aria-label="Loading">
+        <div class="preloader__image">
+            <img src="assets/images/resources/jablynzeta-logo.png" alt="" width="220" height="80" />
+        </div>
     </div>
-    <!-- /.preloader -->
+    <!-- Hides without jQuery so Netlify is not stuck if a vendor script errors before window load -->
+    <script>
+(function () {
+  var done = false;
+  function hidePreloader() {
+    var p = document.getElementById("preloader");
+    if (!p) return;
+    p.classList.add("preloader--done");
+    p.setAttribute("aria-hidden", "true");
+    p.style.display = "none";
+  }
+  function once() {
+    if (done) return;
+    done = true;
+    hidePreloader();
+  }
+  if (document.readyState === "complete") once();
+  else window.addEventListener("load", once);
+  document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(once, 600);
+  });
+  setTimeout(once, 12000);
+})();
+    </script>
+    <script>
+(function () {
+  var blocked = ["contact.html", "services.html", "harmony-masterclass.html"];
+  function isBlocked(href) {
+    var path = (href || "").trim().split("#")[0].split("?")[0];
+    var file = path.replace(/^.*\//, "");
+    return blocked.indexOf(file) !== -1;
+  }
+  document.addEventListener("click", function (e) {
+    var a = e.target && e.target.closest("a[href]");
+    if (!a) return;
+    var h = a.getAttribute("href");
+    if (!h) return;
+    if (h.indexOf("mailto:") === 0 || h.indexOf("tel:") === 0 || h.indexOf("https:") === 0 || h.indexOf("http:") === 0) return;
+    if (isBlocked(h)) e.preventDefault();
+  }, true);
+})();
+    </script>
 
     <div class="page-wrapper">
         <!--Start Main Header One-->
