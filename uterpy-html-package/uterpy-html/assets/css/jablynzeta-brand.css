@@ -60,6 +60,29 @@
   --woodza-white: #ffffff;
 
   --thm-font: 'Kumbh Sans', system-ui, sans-serif;
+
+  /* Single page white — matches logo PNG fields + removes gray strip (#f7f7f7) vs #fff clash */
+  --jz-surface-white: #ffffff;
+}
+
+.main-header-one__bottom {
+  background-color: var(--jz-surface-white) !important;
+}
+
+.main-header-one__bottom-left .logo-one::before {
+  border-bottom-color: var(--jz-surface-white) !important;
+}
+
+.stricky-header {
+  background-color: var(--jz-surface-white) !important;
+}
+
+.preloader {
+  background-color: var(--jz-surface-white) !important;
+}
+
+body.custom-cursor {
+  background-color: var(--jz-surface-white);
 }
 
 /* Headings: align with logo (strong sans) */
@@ -107,7 +130,7 @@ h6,
 /* Footer: white backing so logo artwork (white field) reads on dark bar */
 .site-footer .footer-widget__logo a {
   display: inline-block;
-  background: #ffffff;
+  background: var(--jz-surface-white);
   padding: 10px 14px;
   border-radius: 6px;
   line-height: 0;
@@ -125,7 +148,7 @@ h6,
 
 .mobile-nav__content .logo-box a {
   display: inline-block;
-  background: #ffffff;
+  background: var(--jz-surface-white);
   padding: 8px 10px;
   border-radius: 4px;
   line-height: 0;
