@@ -103,6 +103,32 @@ h6,
   color: #9ba9af !important;
 }
 
+/* Mission & vision: content sits over testimonial dark band — legible cards */
+.testimonial-one.jz-purpose-mission .why-choose-one__content-text {
+  background: var(--jz-surface-white);
+  border-radius: 14px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
+  padding: 1.75rem 1.5rem !important;
+  position: relative;
+  z-index: 1;
+}
+
+.testimonial-one.jz-purpose-mission .why-choose-one__content-text h3.sec-title__title {
+  color: var(--jz-primary) !important;
+  margin-top: 0;
+}
+
+.testimonial-one.jz-purpose-mission .why-choose-one__content-text .text2 {
+  color: var(--jz-primary) !important;
+  font-weight: 500;
+}
+
+@media only screen and (max-width: 991px) {
+  .testimonial-one.jz-purpose-mission .row > [class*='col-'] + [class*='col-'] .why-choose-one__content-text {
+    margin-top: 1rem;
+  }
+}
+
 .footer-widget__title {
   font-family: var(--uterpy-font) !important;
   color: #9ba9af;
@@ -239,9 +265,125 @@ a:hover {
   display: block;
 }
 
-.why-choose-one__img .shape2,
-.why-choose-one__img2 .experience-box::after {
+.why-choose-one__img .shape2 {
   background: var(--jz-primary) !important;
+}
+
+/* JZ circle — same treatment as former .why-choose-one__img2 .experience-box (badge moved between images) */
+.why-choose-one__jz-badge .experience-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.why-choose-one__jz-badge .experience-box::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: #faf7f6;
+  border-radius: 50%;
+  content: "";
+  z-index: -1;
+}
+
+.why-choose-one__jz-badge .experience-box::after {
+  position: absolute;
+  top: -17px;
+  left: -7px;
+  bottom: 5px;
+  right: -7px;
+  background: var(--jz-primary) !important;
+  border-radius: 50%;
+  content: "";
+  z-index: -2;
+}
+
+.why-choose-one__jz-badge .experience-box h2 {
+  font-size: 46px;
+  line-height: 46px;
+  font-weight: 700;
+}
+
+.why-choose-one__jz-badge .experience-box p {
+  color: var(--uterpy-black);
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 500;
+}
+
+/* JZ badge: mobile = centered between photos; desktop = overlap corner (same as original layout) */
+.why-choose-one__jz-badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  z-index: 6;
+}
+
+@media only screen and (max-width: 767px) {
+  .why-choose-one__jz-badge {
+    margin-top: -52px;
+    margin-bottom: -52px;
+    padding: 0 18px;
+    pointer-events: none;
+  }
+
+  .why-choose-one__jz-badge .experience-box {
+    pointer-events: auto;
+    position: relative;
+    top: auto;
+    left: auto;
+    margin: 0;
+    box-shadow: 0 18px 48px rgba(74, 85, 89, 0.12);
+  }
+
+  /* stack: no gap where old margin sat on img2; center the framed photo under the badge */
+  .why-choose-one .why-choose-one__img2 {
+    margin-top: 0 !important;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    left: auto;
+    right: auto;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .why-choose-one__jz-badge {
+    position: absolute;
+    right: 100px;
+    bottom: -88px;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    pointer-events: none;
+    justify-content: flex-end;
+  }
+
+  .why-choose-one__jz-badge .experience-box {
+    pointer-events: auto;
+    position: relative;
+    top: auto;
+    left: auto;
+    margin: 0;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .why-choose-one__jz-badge {
+    right: 120px;
+    bottom: -95px;
+  }
 }
 
 /* Service card CTA chevron was hard-coded coral in uterpy.css */

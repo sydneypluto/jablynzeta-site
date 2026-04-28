@@ -1371,12 +1371,7 @@
         margin-top: 30px;
     }
 
-    .why-choose-one__img2 .experience-box {
-        position: relative;
-        top: 0px;
-        left: 0px;
-        margin-top: 35px;
-    }
+    /* JZ badge lives in .why-choose-one__jz-badge (see jablynzeta-brand.css) */
 
     /*Case One*/
     .case-one__single {
