@@ -318,3 +318,73 @@ a:hover {
     bottom: calc(88px + env(safe-area-inset-bottom, 0px));
   }
 }
+
+/* Mobile: shorter header bar — logo cropped/zoomed (PNG includes extra whitespace) */
+@media only screen and (max-width: 767px) {
+  .main-header-one__bottom-inner {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .main-header-one__bottom-left .logo-one {
+    flex: 1 1 auto;
+    min-width: 0;
+    max-width: min(52vw, 190px);
+  }
+
+  .main-header-one__bottom-left .logo-one a {
+    display: block;
+    height: 40px;
+    max-width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    border-radius: 2px;
+  }
+
+  .main-header-one__bottom-left .logo-one img {
+    width: 100%;
+    height: 100%;
+    max-height: none !important;
+    object-fit: cover;
+    object-position: 50% 42%;
+    transform: translate3d(0, 0, 0) scale(1.22);
+    transform-origin: center center;
+  }
+
+  .stricky-header .logo {
+    max-width: min(52vw, 190px);
+  }
+
+  .stricky-header .logo a {
+    display: block;
+    height: 40px;
+    overflow: hidden;
+    line-height: 0;
+  }
+
+  .stricky-header .logo img {
+    width: 100%;
+    height: 100%;
+    max-height: none !important;
+    object-fit: cover;
+    object-position: 50% 42%;
+    transform: translate3d(0, 0, 0) scale(1.22);
+    transform-origin: center center;
+  }
+
+  .mobile-nav__content .logo-box a {
+    max-width: min(72vw, 260px);
+    height: 46px;
+    overflow: hidden;
+  }
+
+  .mobile-nav__content .logo-box img {
+    width: 100%;
+    height: 100%;
+    max-height: none !important;
+    object-fit: cover;
+    object-position: 50% 42%;
+    transform: translate3d(0, 0, 0) scale(1.12);
+    transform-origin: center center;
+  }
+}
