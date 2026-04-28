@@ -265,6 +265,12 @@ a:hover {
   display: none !important;
 }
 
+/* Scroll-to-top: left side — WhatsApp FAB stays on the right */
+.scroll-to-top.scroll-to-target {
+  left: 40px;
+  right: auto;
+}
+
 /* Floating WhatsApp: delayed entrance + soft bob (sits above scroll-to-top) */
 .jz-whatsapp-fab-wrap {
   position: fixed;
@@ -339,6 +345,11 @@ a:hover {
   .jz-whatsapp-fab-wrap {
     right: 20px;
     bottom: calc(88px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .scroll-to-top.scroll-to-target {
+    left: 20px;
+    bottom: calc(28px + env(safe-area-inset-bottom, 0px));
   }
 }
 
