@@ -335,20 +335,22 @@ a:hover {
   .main-header-one__bottom-left .logo-one a {
     display: inline-flex;
     align-items: center;
+    height: 44px;
     max-width: 100%;
-    overflow: visible;
+    overflow: hidden;
     line-height: 0;
   }
 
   .main-header-one__bottom-left .logo-one img {
     display: block;
     width: auto;
-    max-width: 100%;
+    max-width: none;
     height: auto;
-    max-height: 44px;
+    max-height: 38px;
     object-fit: contain;
     object-position: left center;
-    transform: none;
+    transform: translateZ(0) scale(1.16);
+    transform-origin: left center;
   }
 
   .stricky-header .logo {
@@ -358,36 +360,42 @@ a:hover {
   .stricky-header .logo a {
     display: inline-flex;
     align-items: center;
+    height: 44px;
     max-width: 100%;
-    overflow: visible;
+    overflow: hidden;
     line-height: 0;
   }
 
   .stricky-header .logo img {
     display: block;
     width: auto;
-    max-width: 100%;
+    max-width: none;
     height: auto;
-    max-height: 44px;
+    max-height: 38px;
     object-fit: contain;
     object-position: left center;
-    transform: none;
+    transform: translateZ(0) scale(1.16);
+    transform-origin: left center;
   }
 
   .mobile-nav__content .logo-box a {
     max-width: min(92vw, 320px);
-    overflow: visible;
+    height: 52px;
+    overflow: hidden;
+    align-items: center;
+    display: inline-flex;
     line-height: 0;
   }
 
   .mobile-nav__content .logo-box img {
     display: block;
     width: auto;
-    max-width: 100%;
+    max-width: none;
     height: auto;
-    max-height: 52px;
+    max-height: 45px;
     object-fit: contain;
     object-position: left center;
-    transform: none;
+    transform: translateZ(0) scale(1.156);
+    transform-origin: left center;
   }
 }
