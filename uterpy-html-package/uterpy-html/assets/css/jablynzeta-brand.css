@@ -265,17 +265,18 @@ a:hover {
   display: none !important;
 }
 
-/* Scroll-to-top: left side — WhatsApp FAB stays on the right */
+/* Scroll-to-top + WhatsApp: same inset from bottom edge (mirror left / right) */
 .scroll-to-top.scroll-to-target {
   left: 40px;
   right: auto;
+  bottom: calc(40px + env(safe-area-inset-bottom, 0px));
 }
 
-/* Floating WhatsApp: delayed entrance + soft bob (sits above scroll-to-top) */
+/* Floating WhatsApp: delayed entrance + soft bob */
 .jz-whatsapp-fab-wrap {
   position: fixed;
   right: 40px;
-  bottom: calc(95px + env(safe-area-inset-bottom, 0px));
+  bottom: calc(40px + env(safe-area-inset-bottom, 0px));
   z-index: 100;
   opacity: 0;
   transform: translateY(22px) scale(0.92);
@@ -344,7 +345,7 @@ a:hover {
 @media (max-width: 575px) {
   .jz-whatsapp-fab-wrap {
     right: 20px;
-    bottom: calc(88px + env(safe-area-inset-bottom, 0px));
+    bottom: calc(28px + env(safe-area-inset-bottom, 0px));
   }
 
   .scroll-to-top.scroll-to-target {
