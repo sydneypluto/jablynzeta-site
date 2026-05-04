@@ -85,9 +85,11 @@ body.custom-cursor {
   background-color: var(--jz-surface-white);
 }
 
-/* About / Services page hero: counselling-space banner (people-free); readable title over photo */
+/* About / Services / Contact page hero: readable title over branded banner photo */
 body.jz-page-about .page-header__bg,
-body.jz-page-services .page-header__bg {
+body.jz-page-services .page-header__bg,
+body.jz-page-contact .page-header__bg,
+body.jz-page-harmony .page-header__bg {
   background-color: #4a5559 !important;
   background-blend-mode: multiply !important;
 }
@@ -97,13 +99,21 @@ body.jz-page-about .page-header__inner ul.thm-breadcrumb li,
 body.jz-page-about .page-header__inner ul.thm-breadcrumb li a,
 body.jz-page-services .page-header__inner h2,
 body.jz-page-services .page-header__inner ul.thm-breadcrumb li,
-body.jz-page-services .page-header__inner ul.thm-breadcrumb li a {
+body.jz-page-services .page-header__inner ul.thm-breadcrumb li a,
+body.jz-page-contact .page-header__inner h2,
+body.jz-page-contact .page-header__inner ul.thm-breadcrumb li,
+body.jz-page-contact .page-header__inner ul.thm-breadcrumb li a,
+body.jz-page-harmony .page-header__inner h2,
+body.jz-page-harmony .page-header__inner ul.thm-breadcrumb li,
+body.jz-page-harmony .page-header__inner ul.thm-breadcrumb li a {
   color: var(--jz-surface-white) !important;
   text-shadow: 0 1px 22px rgba(0, 0, 0, 0.5);
 }
 
 body.jz-page-about .page-header__inner .thm-breadcrumb li::before,
-body.jz-page-services .page-header__inner .thm-breadcrumb li::before {
+body.jz-page-services .page-header__inner .thm-breadcrumb li::before,
+body.jz-page-contact .page-header__inner .thm-breadcrumb li::before,
+body.jz-page-harmony .page-header__inner .thm-breadcrumb li::before {
   color: rgba(255, 255, 255, 0.72) !important;
 }
 
@@ -438,7 +448,60 @@ a:hover {
   border-right-color: var(--jz-primary) !important;
 }
 
-/* Broader impact (therapy one): right column photo — design frame 905×825 */
+/* Therapy band (about, services, home broader-impact): photo on .therapy-one__bg — no grey overlay wash */
+body.jz-page-about .therapy-one__bg,
+body.jz-page-services .therapy-one__bg,
+.therapy-one--jz-broader .therapy-one__bg {
+  background-blend-mode: normal !important;
+  background-size: cover !important;
+  background-position: center center !important;
+}
+
+/*
+  Photo slab: pull past template’s default 49% line so no pale strip between copy column (~5/12) and background.
+*/
+@media only screen and (min-width: 992px) {
+  .therapy-one--jz-broader .therapy-one__bg,
+  body.jz-page-about .therapy-one .therapy-one__bg,
+  body.jz-page-services .therapy-one--services .therapy-one__bg {
+    left: calc(41.666% - 0.85rem) !important;
+    right: 0 !important;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  .therapy-one--jz-broader .therapy-one__bg,
+  body.jz-page-about .therapy-one .therapy-one__bg,
+  body.jz-page-services .therapy-one--services .therapy-one__bg {
+    left: calc(41.666% - 1.25rem) !important;
+  }
+}
+
+/*
+  uterpy-responsive hides .therapy-one__bg and .therapy-one__img1 on tablets; restore bg for branded section only.
+*/
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .therapy-one--jz-broader .therapy-one__bg,
+  body.jz-page-about .therapy-one .therapy-one__bg,
+  body.jz-page-services .therapy-one--services .therapy-one__bg {
+    display: block !important;
+  }
+
+  .therapy-one--jz-broader .therapy-one__left {
+    margin-bottom: 40px !important;
+  }
+
+  body.jz-page-about .therapy-one .therapy-one__left,
+  body.jz-page-services .therapy-one--services .therapy-one__left {
+    margin-bottom: 40px !important;
+  }
+}
+
+/*
+  uterpy-responsive hides ONLY .therapy-one__img1 for 1200–1750px — irrelevant now, kept for clarity if img1 returns elsewhere.
+*/
+
+/* Fallback: demo pages still using .therapy-one__img1 (legacy template markup) — frame 905×825 */
 .therapy-one__img1 img {
   display: block;
   width: 905px;

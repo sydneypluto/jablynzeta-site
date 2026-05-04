@@ -8,6 +8,7 @@
     "preview": "vite preview",
     "optimize:banners": "node tools/optimize-banners.mjs",
     "optimize:services": "node tools/optimize-services.mjs",
+    "optimize:services-row2": "node tools/optimize-services-row2.mjs",
     "optimize:why-choose": "node tools/optimize-why-choose.mjs",
     "optimize:therapy-broader": "node tools/optimize-therapy-broader.mjs",
     "build:favicons": "node tools/build-favicons.mjs"
