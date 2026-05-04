@@ -18,6 +18,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(siteRoot, "index.html"),
+        about: resolve(siteRoot, "about.html"),
         services: resolve(siteRoot, "services.html"),
         contact: resolve(siteRoot, "contact.html"),
         harmony: resolve(siteRoot, "harmony-masterclass.html"),

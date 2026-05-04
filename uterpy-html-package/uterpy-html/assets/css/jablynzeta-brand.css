@@ -85,6 +85,38 @@ body.custom-cursor {
   background-color: var(--jz-surface-white);
 }
 
+/* About / Services page hero: counselling-space banner (people-free); readable title over photo */
+body.jz-page-about .page-header__bg,
+body.jz-page-services .page-header__bg {
+  background-color: #4a5559 !important;
+  background-blend-mode: multiply !important;
+}
+
+body.jz-page-about .page-header__inner h2,
+body.jz-page-about .page-header__inner ul.thm-breadcrumb li,
+body.jz-page-about .page-header__inner ul.thm-breadcrumb li a,
+body.jz-page-services .page-header__inner h2,
+body.jz-page-services .page-header__inner ul.thm-breadcrumb li,
+body.jz-page-services .page-header__inner ul.thm-breadcrumb li a {
+  color: var(--jz-surface-white) !important;
+  text-shadow: 0 1px 22px rgba(0, 0, 0, 0.5);
+}
+
+body.jz-page-about .page-header__inner .thm-breadcrumb li::before,
+body.jz-page-services .page-header__inner .thm-breadcrumb li::before {
+  color: rgba(255, 255, 255, 0.72) !important;
+}
+
+/* Deep links from Home / About: scroll under sticky header */
+body.jz-page-services #mentoring,
+body.jz-page-services #relationship,
+body.jz-page-services #wellness,
+body.jz-page-services #speaking,
+body.jz-page-services #therapy,
+body.jz-page-services #concept {
+  scroll-margin-top: 110px;
+}
+
 /* Headings: align with logo (strong sans) */
 h1,
 h2,
@@ -126,6 +158,21 @@ h6,
 @media only screen and (max-width: 991px) {
   .testimonial-one.jz-purpose-mission .row > [class*='col-'] + [class*='col-'] .why-choose-one__content-text {
     margin-top: 1rem;
+  }
+}
+
+/* About page: qualitative labels in counter strip (template layout, no fake odometer numbers) */
+.counter-one .jz-about-highlight {
+  font-size: 22px;
+  line-height: 1.25;
+  margin: 0;
+  font-weight: 700;
+  color: inherit;
+}
+
+@media only screen and (min-width: 992px) {
+  .counter-one .jz-about-highlight {
+    font-size: 26px;
   }
 }
 
@@ -391,12 +438,12 @@ a:hover {
   border-right-color: var(--jz-primary) !important;
 }
 
-/* Broader impact (therapy one): right column photo — 475×775 frame */
+/* Broader impact (therapy one): right column photo — design frame 905×825 */
 .therapy-one__img1 img {
   display: block;
-  width: 475px;
+  width: 905px;
   max-width: 100%;
-  aspect-ratio: 475 / 775;
+  aspect-ratio: 905 / 825;
   height: auto;
   object-fit: cover;
   object-position: center;
